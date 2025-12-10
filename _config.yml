@@ -10,7 +10,7 @@
 url: "https://aitooladvisors.com"
 
 # Because this repo is named "blog", your site lives at /blog
-#baseurl: "/blog"
+baseurl: ""
 
 
 # General settings
