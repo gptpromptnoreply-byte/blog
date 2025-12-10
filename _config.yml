@@ -7,10 +7,10 @@
 # ========================================================================================
 
 # Set the URL of your site (with protocol)
-url: "https://gptpromptnoreply-byte.github.io"
+url: "https://aitooladvisors.com"
 
 # Because this repo is named "blog", your site lives at /blog
-baseurl: "/blog"
+#baseurl: "/blog"
 
 
 # General settings
