@@ -1,3 +1,4 @@
+
 name: Build and Deploy Jekyll (Hydejack)
 
 on:
@@ -24,12 +25,12 @@ jobs:
         run: bundle install
 
       - name: Build Jekyll site
-        run: bundle exec jekyll build -d ./_site
+        run: bundle exec jekyll build -d _site
 
       - name: Upload built site
         uses: actions/upload-artifact@v4
         with:
-          name: github-pages
+          name: site
           path: _site
 
   deploy:
@@ -40,11 +41,16 @@ jobs:
       id-token: write
 
     steps:
+      - name: Create deploy directory
+        run: mkdir deploy_output
+
       - name: Download artifact
         uses: actions/download-artifact@v4
         with:
-          name: github-pages
-          path: .
+          name: site
+          path: deploy_output
 
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4
+        with:
+          build_dir: deploy_output
